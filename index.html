@@ -1,122 +1,142 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>SIGN IN FORM</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In Form</title>
     <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
         body {
-            background :linear-gradient(135deg , #ff0066, #6a00ff);
-        }
-
-        form {
-            border: 3px solid black;
-            display: flex;
-
-            
-        }
-
-        .form-box {
-            
+            background: linear-gradient(135deg, #ff0066, #6a00ff);
+            height: 100vh;
             display: flex;
             justify-content: center;
-            
+            align-items: center;
         }
 
-        .form-box h2 {
+        .form-container {
+            background-color: #fff;
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .form-container h2 {
             text-align: center;
-            padding: 10px;
-            border-radius:200px;
-            display: flex;
-
-        }
-
-        .row {
-            display: inline;
-            gap: 10px;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-            margin-left: 150px;
-            
+            margin-bottom: 30px;
+            color: #333;
         }
 
         .input-group {
-            align-items: left;
-            margin-left: 150px;
             margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            transition: 0.3s ease;
+        }
+
+        .input-group input:focus {
+            border-color: #6a00ff;
+            outline: none;
+        }
+
+        .remember-me {
             display: flex;
-            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
         }
 
-        .input-group1 {
-            align-items: left;
-             margin-left: 150px;
-            margin-bottom: 20px;
+        .remember-me input {
+            margin-right: 10px;
+        }
+
+        .actions {
             display: flex;
-            justify-content: center;
-           
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
         }
 
-        .cancel-button {
-            font-size: 20px;
-            width: auto;
-             margin-top: 10px;;
-            margin-bottom: 20px;
-            background-color: blue;
-            text-align: center;
-            padding-right: 20px;
-            margin-left: 300px;
-            display:flex;
-
+        .actions button {
+            background-color: #6a00ff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
         }
-       
-      .external{
-        margin-left: 150px;
-      }
 
+        .actions button:hover {
+            background-color: #4b00cc;
+        }
+
+        .forgot-password {
+            text-align: right;
+            margin-top: 10px;
+        }
+
+        .forgot-password a {
+            color: #6a00ff;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
     </style>
-
 </head>
 
 <body>
-    <div class="form-box">
-        <h2>Sign In</Form>
-        </h2>
-    </div>
-
-    <form>
-        <div class="row">
+    <div class="form-container">
+        <h2>Sign In</h2>
+        <form>
             <div class="input-group">
-                <label>User Name </label>
-                <input type="text" placeholder="Enter User Name" >
+                <label for="username">User Name</label>
+                <input type="text" id="username" placeholder="Enter User Name">
+            </div>
 
-               
-            </div class="row">
-        <div class="input-group1">
-        <label>Password<br></label>
-        <input type="password" placeholder="Enter the Password">
-        </div>
-        <div>
-            <button type="submit" class="cancel-button">Submit</button>
-        </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter Password">
+            </div>
 
-        <div>
-            <label>
-                <input type="checkbox" class="external">Remember Me
-            </label>
-        </div>
+            <div class="remember-me">
+                <input type="checkbox" id="remember">
+                <label for="remember">Remember Me</label>
+            </div>
 
-        <div>
-            <button type="button" class="cancel-button">Cancel</button>
-        </div>
-    <div class="external">
+            <div class="actions">
+                <button type="submit">Submit</button>
+                <button type="button">Cancel</button>
+            </div>
 
-                <label text-align="padding-right" > Forget<a href=" Password?">Password?</a></label>
-        </div>
-    </form>
+            <div class="forgot-password">
+                <a href="#">Forgot Password?</a>
+            </div>
+        </form>
     </div>
-
 </body>
 
 </html>
